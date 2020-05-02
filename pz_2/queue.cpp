@@ -1,17 +1,19 @@
 #include "prototypes.h"
 #include <stdio.h>
 
-void QCreation(queue *&Q, int elem)
+void QPush(queue *&Q, int elem)
 {
-   Q = new queue();
-   Q->beg = new qlist(elem);
-   Q->end = Q->beg;
-}
-
-void QPush(queue *Q, int elem)
-{
-   Q->end->next = new qlist(elem);
-   Q->end = Q->end->next;
+   if (QEmptiness(Q))
+   {
+      Q = new queue();
+      Q->beg = new qlist(elem);
+      Q->end = Q->beg;
+   }
+   else
+   {
+      Q->end->next = new qlist(elem);
+      Q->end = Q->end->next;
+   }
 }
 
 int QPop(queue *Q, int elem)

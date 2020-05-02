@@ -39,9 +39,7 @@ inline bool QEmptiness(queue *Q)
    return Q == NULL;
 }
 
-void QCreation(queue *&Q, int elem);
-
-void QPush(queue *Q, int elem);
+void QPush(queue *&Q, int elem);
 
 int QPop(queue *Q, int elem);
 

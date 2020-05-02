@@ -95,9 +95,6 @@ int MQueue()
                _getch();
                return 1;
             }
-            if (QEmptiness(Q))
-               QCreation(Q, m);
-            else
                QPush(Q, m);
             break;
          case CMD_QPRINT: if (QEmptiness(Q))
