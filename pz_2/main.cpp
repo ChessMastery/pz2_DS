@@ -68,7 +68,7 @@ int MQueue()
    enum Comands { CMD_QPUSH = 1, CMD_QPRINT, CMD_QPOP, CMD_QCLEAR, CMD_QBACK };
 
    int n = 0, exitFlag = 0, m = 0;
-   queue *Q = NULL, *st = NULL;
+   queue *Q = NULL;
    setlocale(LC_CTYPE, "Russian");
    do
    {
@@ -96,10 +96,7 @@ int MQueue()
                return 0;
             }
             if (QEmptiness(Q))
-            {
-               Q = new queue();
                QCreation(Q, m);
-            }
             else
                QPush(Q, m);
             break;

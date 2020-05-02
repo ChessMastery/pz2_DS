@@ -1,8 +1,9 @@
 #include "prototypes.h"
 #include <stdio.h>
 
-void QCreation(queue *Q, int elem)
+void QCreation(queue *&Q, int elem)
 {
+   Q = new queue();
    Q->beg = new qlist(elem);
    Q->end = Q->beg;
 }
