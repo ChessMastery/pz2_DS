@@ -23,18 +23,18 @@ int MStack()
          printf_s("¬ведите номер команды (от 1 до 5): ");
          if (!scanf_s("%d", &n))
          {
-            printf_s("ошибка ввода");
+            printf_s("ошибка ввода\n");
             _getch();
-            return 0;
+            return 1;
          }
          switch (n)
          {
          case CMD_SPUSH: printf_s("¬ведите число: ");
             if (!scanf_s("%d", &m))
             {
-               printf_s("ошибка ввода");
+               printf_s("ошибка ввода\n");
                _getch();
-               return 0;
+               return 1;
             }
             SPush(st, m);
             break;
@@ -82,7 +82,7 @@ int MQueue()
          printf_s("¬ведите номер команды (от 1 до 5): ");
          if (!scanf_s("%d", &n))
          {
-            printf_s("ошибка ввода");
+            printf_s("ошибка ввода\n");
             _getch();
             return 0;
          }
@@ -91,7 +91,7 @@ int MQueue()
          case CMD_QPUSH: printf_s("¬ведите число: ");
             if (!scanf_s("%d", &m))
             {
-               printf_s("ошибка ввода");
+               printf_s("ошибка ввода\n");
                _getch();
                return 0;
             }
@@ -143,14 +143,14 @@ int main()
          {
             printf_s("ошибка ввода");
             _getch();
-            return 0;
+            return 1;
          }
          switch (n)
          {
-         case CMD_STACK: MStack();
+         case CMD_STACK: if (MStack()) return 1;
             repeatFlag = 1;
             break;
-         case CMD_QUEUE: MQueue();
+         case CMD_QUEUE: if (MQueue()) return 1;
             repeatFlag = 1;
             break;
          case CMD_EXIT: exitFlag = 1;
