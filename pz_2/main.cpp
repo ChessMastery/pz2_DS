@@ -84,7 +84,7 @@ int MQueue()
          {
             printf_s("ошибка ввода\n");
             _getch();
-            return 0;
+            return 1;
          }
          switch (n)
          {
@@ -93,7 +93,7 @@ int MQueue()
             {
                printf_s("ошибка ввода\n");
                _getch();
-               return 0;
+               return 1;
             }
             if (QEmptiness(Q))
                QCreation(Q, m);
